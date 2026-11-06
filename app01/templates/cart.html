@@ -1,0 +1,73 @@
+{% extends 'master.html' %}
+
+{% load static %}
+
+{% block title %}
+	Home Page
+{% endblock %}
+
+{% block content %}
+
+<div class="sketch">
+	<img src="{% static 'pencil.png' %}" alt="" class="nna">
+	<h1 class="regr" style="left:650px;">Cart</h1>
+</div>
+
+
+
+<div class="container">
+
+    <div class="row">
+        <div class="col-sm-9">
+
+        {% for x in cart %}
+             <div class="cart1">
+                    <img src="/media/{{x.cart_image}}" alt="" class="cart2">
+
+            </div>
+
+
+            <div class="cartn"><span>{{x.cart_name}}</span></div>
+                 <div class="cartp">
+                    <span>${{x.cart_price}}</span>
+
+             <div class="cartbtn">
+                 <div class="span1">
+                     <span>
+                       <button class="cartb1"><a href="/cart?q=inc&cp={{x.id}}">+</a></button>
+
+                    <button class="cartb">  <a href="/cart?del={{x.id}}"> Delete </a></button>
+
+                       <button class="cartb1"><a href="/cart?q=dec&cp={{x.id}}">-</a></button>
+                           </span>
+                 </div>
+                  </div>
+ </div>
+
+        {% endfor %}
+
+        </div>
+        <div class="col-sm-3 cartbox">
+            <div style="background-color:;min-height:300px;
+            padding: 15px;">
+                Total Amount : {{tot}}
+                <br><br>
+                Shipping : {{shp}}
+                <br><br>
+                GST : {{gst}}
+                <br>
+                <hr>
+                <br>
+                Total : {{gtot}}
+                <br><br>
+                <a href="/checkout">
+                    <button class="btn btn-danger">Checkout</button>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+
+

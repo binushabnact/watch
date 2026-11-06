@@ -1,0 +1,114 @@
+{% extends 'master.html' %}
+
+{% load static %}
+
+{% block title %}
+	Home Page
+{% endblock %}
+
+{% block content %}
+<div class="sketch">
+	<img src="{% static 'pencil.png' %}" alt="" class="nna">
+	<h1 class="regr" style="left:550px;">Addproduct</h1>
+</div>
+
+ <div class="iconcom1">
+	 <div class="ho1">
+      <img src="{% static 'homee.png' %}"  alt="" class="somthing">
+		<p class="wood">Buttonwood, California.<br><span  style="color:#bbbfbc; font-size:15px;"> Rosemead, CA 91770</span></p>
+		 </div>
+
+    <div class="ho1">
+      <img src="{% static 'phone.png' %}" alt=""  class="somthing">
+        <p class="wood">+1 253 565 2365<br><span  style="color:#bbbfbc; font-size:15px;">Mon to Fri 9am to 6pm</span></p>
+    </div>
+
+    <div class="ho1">
+     <img src="{% static 'letter.png' %}" alt=""  class="somthing">
+      <p class="wood">support@colorlib.com<br><span  style="color:#bbbfbc; font-size:15px;">Send us your query anytime!</span></p>
+	</div>
+ </div>
+
+<br><br>
+<br><br>
+<br><br>
+<br><br>
+<div class="la">
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4 offset-sm-4">
+      <div class="bg-secondary text-white p-3 mt-5">
+
+        <form action="/addproduct" method="post" enctype="multipart/form-data">
+          {% csrf_token %}
+          <div class="mb-3 mt-3">
+            <label for="form-label"></label>
+            <input type="text" class="form-control" id="name" placeholder="product name"
+            name="pro_name">
+          </div>
+
+           <div class="mb-3 mt-3">
+            <label for="form-label"></label>
+            <input type="number" class="form-control" id="price" placeholder="product price"
+            name="pro_price">
+          </div>
+
+           <div class="mb-3 mt-3">
+            <label for="form-label"></label>
+            <input type="file" class="form-control" id="image" placeholder="product image"
+            name="pro_image">
+          </div> <br> <br>
+           <button type="submit" class="btn btn-danger" style="top" >submit</button>
+        </form>
+           </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+ <div class="did1">
+    <div class="final-r">
+       <img src="{% static 'logo2_footer.png' %}" alt="" class="">
+		<p class="fix">Asorem ipsum adipolor sdit amet,<br>
+			consectetur adipisicing elitcf sed do <br> eiusmod tem.</p>
+	</div>
+
+
+<table class="tables">
+	<tr>
+    <th>Quick Links</th>
+    <th>New Products</th>
+    <th>Support</th>
+    </tr>
+
+    <tr>
+    <td>About</td>
+    <td>Woman Cloth</td>
+    <td>Frequently Asked Questions</td>
+    </tr>
+
+    <tr>
+    <td>Offers & Discounts</td>
+    <td>Fashion Accessories</td>
+    <td>Terms & Conditions</td>
+    </tr>
+
+	<tr>
+    <td>Get Coupon</td>
+    <td>Man Accessories</td>
+    <td>Privacy Policy</td>
+    </tr>
+
+	 <tr>
+    <td>Contact Us</td>
+    <td>Rubber made Toys</td>
+    <td>Report a Payment Issue</td>
+    </tr>
+
+ </table>
+ </div>
+
+
+{% endblock %}

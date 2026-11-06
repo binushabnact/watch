@@ -1,0 +1,55 @@
+{% extends 'master.html' %}
+
+{% load static %}
+
+{% block title %}
+
+
+{% endblock %}
+
+{% block content %}
+
+<div class="sketch">
+	<img src="{% static 'pencil.png' %}" alt="" class="nna">
+	<h1 class="regr" style="left:650px;">My Orders</h1>
+</div>
+
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      {% for x in order %}
+      <div class="row my-2" style="background-color: rgb(255,255,255,0.2);">
+        <div class="col-sm-4">
+          <div class="inbox1">
+            <img src="/media/{{x.order_image}}" alt="apple" height="100px">
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="span1">
+            <span>{{x.order_name}}</span>
+          </div>
+          <div class="span1">
+            <span>pice = {{x.order_price}}</span>
+          </div>
+          <div class="span1">
+            <span>
+              Quantity: {{x.order_qyt}}
+            </span>
+          </div>
+        </div>
+         <div class="col-sm-4">
+            <div class="span1">
+              <span>{{x.order_amount}}</span>
+            </div>
+           <br>
+         </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% endblock %}

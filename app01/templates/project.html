@@ -1,0 +1,48 @@
+{% extends 'master.html' %}
+
+{% load static %}
+
+{% block title %}
+	Home Page
+{% endblock %}
+
+{% block content %}
+<h2 class="pro1">Cart</h2><br><br><br>
+<div class="container">
+
+    <div class="row">
+        <div class="col-sm-9">
+
+        {% for x in cart %}
+        <div class="row my-2" style="background-color: rgb(255,255,255,0.2);">
+        <div class="col-sm-4">
+            <div class="inbox1">
+                <img src="/media/{{x.cart_image}}" alt="apple" height="100px">
+            </div>
+        </div>
+
+
+        {% endfor %}
+
+        </div>
+        <div class="col-sm-3">
+            <div style="background-color:lightgray;min-height:300px;
+            padding: 15px;">
+                Total Amount : {{tot}}
+                <br><br>
+                Shipping : {{shp}}
+                <br><br>
+                GST : {{gst}}
+                <br>
+                <hr>
+                <br>
+                Total : {{gtot}}
+                <br><br>
+                <a href="/checkout">
+                    <button class="btn btn-success">Checkout</button>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

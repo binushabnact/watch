@@ -1,0 +1,25 @@
+{% extends 'master.html' %}
+
+{% load static %}
+
+{% block title %}
+	Home Page
+{% endblock %}
+
+{% block content %}
+<div class="sketch">
+	<img src="{% static 'pencil.png' %}" alt="" class="nna">
+	<h1 class="regr" style="left:30%; font-size:55px; text-align:center;">Your order is submitted <br> successfully</h1>
+</div>
+
+<div class="container text-center">
+  <h1 class="text-success display-2"></h1>
+    <p></p>
+  <div class="text-center mt-4">
+    <a href="/myorders">
+      <button class="btn btn-success confirm">View your order list</button>
+    </a>
+  </div>
+</div>
+
+{% endblock %}

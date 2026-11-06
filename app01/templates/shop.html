@@ -1,0 +1,37 @@
+{% extends 'master.html' %}
+
+{% load static %}
+
+{% block title %}
+	Home Page
+{% endblock %}
+
+{% block content %}
+<div class="sketch">
+	<img src="{% static 'pencil.png' %}" alt="" class="nna">
+	<h1 class="regr1">Shop</h1>
+</div>
+
+
+
+
+    {% for x in products %}
+  <div class="wid">
+   <div class="left2">
+			<div class="containerr">
+              <img src="/media/{{x.pro_image}}" alt="Avatar" class="image">
+			  <div class="overlay1">
+                <div class="text"><a href="/addtocart/{{x.id}}">Add to cart</a> <img class="love" src="{% static 'love1.png' %}"></div>
+              </div>
+			</div>
+		        <h1 class="white">{{x.pro_name}}</h1>
+		     <p class="white2">${{x.pro_price}}</p>
+		</div>
+  </div>
+
+
+      {% endfor %}
+
+
+{% endblock %}
+

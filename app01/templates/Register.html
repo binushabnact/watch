@@ -1,0 +1,139 @@
+{% extends 'master.html' %}
+
+{% load static %}
+
+{% block title %}
+	Home Page
+
+{% endblock %}
+
+{% block content %}
+<div class="sketch">
+	<img src="{% static 'pencil.png' %}" alt="" class="nna">
+	<h1 class="regr">Registration</h1>
+</div>
+
+
+ <div class="iconcom">
+	 <div class="ho1">
+      <img src="{% static 'homee.png' %}"  alt="" class="somthing">
+		<p class="wood">Buttonwood, California.<br><span  style="color:#bbbfbc; font-size:15px;"> Rosemead, CA 91770</span></p>
+		 </div>
+
+    <div class="ho1">
+      <img src="{% static 'phone.png' %}" alt=""  class="somthing">
+        <p class="wood">+1 253 565 2365<br><span  style="color:#bbbfbc; font-size:15px;">Mon to Fri 9am to 6pm</span></p>
+    </div>
+
+    <div class="ho1">
+     <img src="{% static 'letter.png' %}" alt=""  class="somthing">
+      <p class="wood">support@colorlib.com<br><span  style="color:#bbbfbc; font-size:15px;">Send us your query anytime!</span></p>
+	</div>
+ </div>
+
+
+<div class="la">
+<div class="container form-container">
+  <div class="row">
+	 <div class="col-sm-6 mx-auto">
+		 <div class="pb-secondary text-white p-4 mt-5">
+
+			 <h1></h1>
+
+			 <form action="/Register" method="post">
+				 {% csrf_token %}
+
+				 <div class="mb-3 mbpp">
+					 <label class="form-label">First name:</label>
+					 <input type="text" class="form-control"
+					 name="register_fname"
+					 placeholder="Enter your firstname" required>
+				 </div>
+
+			     <div class="mb-3 mbpp">
+					 <label class="form-label">Last name:</label>
+					 <input type="text" class="form-control"
+					 name="register_lname"
+					 placeholder="Enter your lastname" required>
+				 </div>
+
+				 <div class="mb-3 mbpp">
+					  <label class="form-label">Phone:</label>
+					   <input type="text" class="form-control"
+					   name="register_phone"
+					   placeholder="Enter your phone" required>
+				 </div>
+
+				  <div class="mb-3 mbpp">
+					  <label class="form-label">Email:</label>
+					   <input type="text" class="form-control"
+					   name="register_email"
+					   placeholder="Enter your email" required>
+				 </div>
+
+				  <div class="mb-3 mbpp">
+					   <label class="form-label">User:</label>
+					   <input type="text" class="form-control"
+					   name="register_user"
+					   placeholder="Enter your user" required>
+				 </div>
+
+
+				  <div class="mb-3 mbpp">
+					   <label class="form-label">Password:</label>
+					   <input type="password" class="form-control"
+					   name="register_password"
+					   placeholder="Enter your password" required>
+				 </div>
+
+				 <button type="submit " class="btn btn-danger current mbpp1">Submit</button>
+
+			 </form>
+		 </div>
+	 </div>
+  </div>
+</div>
+</div>
+
+ <div class="did">
+    <div class="final-r">
+       <img src="{% static 'logo2_footer.png' %}" alt="" class="">
+		<p class="fix">Asorem ipsum adipolor sdit amet,<br>
+			consectetur adipisicing elitcf sed do <br> eiusmod tem.</p>
+	</div>
+
+  <table class="tables">
+	<tr>
+    <th>Quick Links</th>
+    <th>New Products</th>
+    <th>Support</th>
+    </tr>
+
+    <tr>
+    <td>About</td>
+    <td>Woman Cloth</td>
+    <td>Frequently Asked Questions</td>
+    </tr>
+
+    <tr>
+    <td>Offers & Discounts</td>
+    <td>Fashion Accessories</td>
+    <td>Terms & Conditions</td>
+    </tr>
+
+	<tr>
+    <td>Get Coupon</td>
+    <td>Man Accessories</td>
+    <td>Privacy Policy</td>
+    </tr>
+
+	 <tr>
+    <td>Contact Us</td>
+    <td>Rubber made Toys</td>
+    <td>Report a Payment Issue</td>
+    </tr>
+
+ </table>
+ </div>
+
+{% endblock %}
